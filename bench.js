@@ -12,6 +12,12 @@ suite
   .add("faster-hi-mom no args", () => {
     fasterHiMom();
   })
+  .add("hi-mom with custom-name", () => {
+    originalHiMom("mama");
+  })
+  .add("faster-hi-mom with custom-name", () => {
+    fasterHiMom("mama");
+  })
   .on("cycle", function(event) {
     console.log(String(event.target));
   })

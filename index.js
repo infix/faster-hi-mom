@@ -1,5 +1,7 @@
 import intl from "./intl.js";
 
+const cache = new Map();
+
 export function hiMom(motherName, motherLang = "en") {
   if (typeof intl[motherLang] !== "object") {
     throw new Error("Language not yet supported, but hi mom anyway!");
@@ -11,7 +13,15 @@ export function hiMom(motherName, motherLang = "en") {
     return defaultMessage;
   }
 
-  return message.replace("{}", motherName || name);
+  const key = `${message}-${name}`;
+
+  if (cache.has(key)) {
+    return cache.get(key);
+  }
+
+  const result = message.replace("{}", motherName || name);
+  cache.set(key, result);
+  return result;
 }
 
 export function hiMoms(mothers) {
