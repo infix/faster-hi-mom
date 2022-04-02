@@ -47,3 +47,7 @@ test("should say hi to Mother in assamese when requested", () => {
 test("should throw error when requested", () => {
   expect(() => hiMom("", "")).toThrowError(/language/i);
 });
+
+test("should not be able to access the prototype", () => {
+  expect(() => hiMom("", "constructor")).toThrowError(/language/i);
+});

@@ -1,7 +1,7 @@
 import intl from "./intl.js";
 
 export function hiMom(motherName, motherLang = "en") {
-  if (!motherLang || !intlMom.hasOwnProperty(motherLang)) {
+  if (typeof intl[motherLang] !== "object") {
     throw new Error("Language not yet supported, but hi mom anyway!");
   }
 
