@@ -15,7 +15,7 @@ export function hiMom(
 
 /**
  * Say hi to multiple moms blazingly fast!
- * @param mother Your moms
+ * @param mothers Your moms
  * @example
  * import { hiMoms } from "hi-mom";
  * console.log(hiMoms([
