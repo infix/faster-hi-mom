@@ -15,12 +15,15 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "hi-mom": "1.0.0",
+    "benchmark": "^2.1.4",
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "jest": "^27.5.1",
     "rollup": "^2.70.1"
   },
   "scripts": {
+    "bench": "node bench.js",
     "prebuild": "npm run test",
     "build": "rollup -c rollup.config.js",
     "prepublishOnly": "npm run build",
