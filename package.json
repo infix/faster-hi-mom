@@ -1,17 +1,18 @@
 {
   "name": "faster-hi-mom",
   "version": "1.0.0",
-  "description": "A blazingly fast JavaScript library to say hi to your mom!",
+  "description": "A blazingly fast JavaScript library to say hi to your mom! forked from hi-mom",
   "main": "index.js",
   "types": "index.d.ts",
   "keywords": [
+    "10x",
     "hello-world",
     "hello",
     "hi",
     "mom",
     "hi-mom"
   ],
-  "author": "Daniil Tsivinsky",
+  "author": "Amr Abulseoud",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
