@@ -1,15 +1,17 @@
-import intlMom from "./lang/intlMom.js";
+import intl from "./intl.js";
 
 export function hiMom(motherName, motherLang = "en") {
   if (!motherLang || !intlMom.hasOwnProperty(motherLang)) {
     throw new Error("Language not yet supported, but hi mom anyway!");
   }
 
-  let re = /{{([\s\S]+)}}/;
-  let greeting = intlMom[motherLang];
-  let mom = greeting.match(re)[0].slice(2, -2);
+  const { name, defaultMessage, message } = intl[motherLang];
 
-  return greeting.replace(re, motherName || mom);
+  if (!motherName) {
+    return defaultMessage;
+  }
+
+  return message.replace("{}", motherName || name);
 }
 
 export function hiMoms(mothers) {
