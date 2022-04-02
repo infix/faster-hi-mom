@@ -1,6 +1,6 @@
 import intl from "./intl.js";
 
-const cache = new Map();
+const cache = {};
 
 export function hiMom(motherName, motherLang = "en") {
   if (typeof intl[motherLang] !== "object") {
@@ -15,12 +15,12 @@ export function hiMom(motherName, motherLang = "en") {
 
   const key = `${message}-${name}`;
 
-  if (cache.has(key)) {
-    return cache.get(key);
+  if (cache[key]) {
+    return cache[key];
   }
 
   const result = message.replace("{}", motherName || name);
-  cache.set(key, result);
+  cache[key] = result;
   return result;
 }
 
