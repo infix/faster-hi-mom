@@ -23,6 +23,7 @@
     "rollup": "^2.70.1"
   },
   "scripts": {
+    "intl": "node make-intl.js",
     "bench": "node bench.js",
     "prebuild": "npm run test",
     "build": "rollup -c rollup.config.js",
